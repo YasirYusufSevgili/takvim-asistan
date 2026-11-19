@@ -12,7 +12,7 @@ class NvidiaLLMClient:
 
     def complete(self, system: str, user: str) -> str:
         # Bazı modeller 'system' rolünü desteklemez; uyumluluk için tek mesajda birleştiriyoruz.
-        prompt = f"{system}\n\n---\nKullanıcı cümlesi: {user}"
+        prompt = f"{system}\n\n---\nGirdi: {user}"
         try:
             response = self._client.chat.completions.create(
                 model=self._model,
