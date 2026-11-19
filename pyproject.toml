@@ -13,6 +13,7 @@ dependencies = [
   "anthropic",
   "flet",
   "python-dotenv",
+  "openai",
 ]
 
 [project.optional-dependencies]

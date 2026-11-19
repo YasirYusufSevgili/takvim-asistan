@@ -16,3 +16,9 @@ class CommitmentRepository(Protocol):
     def update_status(self, commitment_id: int, status: Status) -> Commitment | None: ...
 
     def delete(self, commitment_id: int) -> bool: ...
+
+
+class LLMClient(Protocol):
+    """Herhangi bir dil modeli sağlayıcısı (NVIDIA, Gemini, Claude...) bunu uygular."""
+
+    def complete(self, system: str, user: str) -> str: ...
